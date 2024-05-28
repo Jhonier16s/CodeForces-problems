@@ -226,6 +226,8 @@ for i in p:
 
 print("P: ", word) """
 
+
+# raiz
 """ m = float(input("Digite un valor: "))
 g1, g2 = 0, m / 2.0
 while g1 != g2:
@@ -471,3 +473,427 @@ for x, y in zip(number_one, number_two):
 answer_string = "".join(arrAnswer)
 
 print(answer_string) """
+
+
+# A. Is your horseshoe on the other hoof?
+
+""" number = list(input().split(" "))
+
+unico = list(set(number))
+
+print(len(number) - len(unico)) """
+
+
+# Reto - La serie de Leibniz
+""" 
+number = int(input())
+result = 0
+
+
+for n in range(number):
+
+    aprox = (-1) ** n / (2 * n + 1)
+    result += aprox
+
+result *= 4
+print(result) """
+
+
+# Reto - Palabras pentavocálicas
+
+""" s = input().lower()
+condition = 0
+
+if "a" in s and "e" in s and "i" in s and "o" in s and "u" in s:
+    condition += 1
+
+
+print("SI" if condition == 1 else "NO") """
+
+
+""" # Reto - Palabras pentavocálicas
+
+
+palabra = input("Ingrese una palabra: ").lower()
+
+
+if set('aeiou').issubset(palabra):
+    print("SI")
+else:
+    print("NO") """
+
+
+# Reto - Series de Taylor
+
+
+# Lectura del ángulo en grados
+""" angle_degrees = float(input("Ingrese el ángulo en grados: "))
+
+radians = angle_degrees * 3.1415926535897932384626433832795 / 180
+
+iterations = 10
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+sin_approximation = 0
+for n in range(iterations):
+    term = ((-1) ** n) * (radians ** (2 * n + 1)) / factorial(2 * n + 1)
+    print(term, "term")
+    sin_approximation += term
+
+print("Aproximación del seno de", angle_degrees, "grados:", sin_approximation)
+
+import math
+
+angulo_grados = float(input("Ingrese el ángulo en grados: "))
+
+
+angulo_radianes = math.radians(angulo_grados)
+
+
+seno = math.sin(angulo_radianes)
+
+print("El seno de", angulo_grados, "grados es:", seno) """
+
+
+# A. Hulk
+
+""" num = int(input())
+
+st = ""
+
+for n in range(1, num + 1):
+    if n % 2 == 0:
+        if n == num:
+            st += "I love it "
+        else:
+            st += "I love that "
+    else:
+        if n == num:
+            st += "I hate it "
+        else:
+            st += "I hate that "
+
+
+print(st) """
+
+#  	1328A - Divisibility Problem
+
+""" ite = int(input())
+
+results = []
+
+
+for _ in range(ite):
+
+    a, b = map(int, input().split())
+
+    remainder = a % b
+
+    if remainder == 0:
+        moves_needed = 0
+    else:
+
+        moves_needed = b - remainder
+
+    results.append(moves_needed)
+
+
+for result in results:
+    print(result) """
+
+
+# A. I Wanna Be the Guy
+""" ite = int(input())
+
+firstLine = input().split()[1:]
+secondLine = input().split()[1:]
+print(firstLine)
+print(secondLine)
+levels = set(firstLine + secondLine)
+
+print(levels)
+
+if len(levels) == ite:
+    print("I become the guy.")
+else:
+    print("Oh, my keyboard!") """
+
+# Acepta el reto
+
+# Ventas
+""" 
+ven = []
+max = 0
+min = 0
+prom = 0
+indexMax = 0
+indexMin = 0
+days = ["MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO", "LUNES"]
+
+for n in range(0, 7):
+    day = float(input())
+    if day > max:
+        max = day
+        indexMax = n
+    if n == 0:
+        min = day
+    else:
+        if day < min and day != -1.0:
+            min = day
+            indexMin = n
+    ven.append(day)
+
+pro = 0
+
+for n in range(0, 4):
+    pro += ven[n]
+
+pro = pro / 4
+
+print(max(ven))
+print(min(ven))
+
+if days[indexMax] != days[indexMin]:
+    print(days[indexMax], days[indexMin], "SI" if ven[5] > pro else "NO")
+else:
+    print("EMPATE") """
+
+
+# Coin ganes
+
+
+# Número de casos de prueba
+""" t = int(input())
+
+results = []
+
+for _ in range(t):
+    n = int(input())
+    coins = input()
+
+    count_U = coins.count("U")
+
+    if count_U % 2 == 1:
+        results.append("YES")
+    else:
+        results.append("NO")
+
+for result in results:
+    print(result) """
+
+
+# A. Pangram
+
+""" import string
+
+number = int(input())
+st = input().lower()
+
+alp = list(map(chr, range(97, 123)))
+alphabet = list(string.ascii_lowercase)  # alpphabet
+stUnique = list(set(st))
+
+count = 0
+
+
+for d in stUnique:
+    if d in stUnique:
+        count += 1
+
+print("YES" if len(alp) == count else "NO") """
+
+
+# A. Arrival of the General
+
+""" num = int(input())
+
+
+hs = list(map(int, input().split()))
+
+
+maxNumber = max(hs)
+minNumber = min(hs)
+
+
+indexMax = hs.index(maxNumber)
+
+
+indexMin = len(hs) - 1 - hs[::-1].index(minNumber)
+
+
+if indexMin < indexMax:
+
+    position = indexMax + (num - 1 - indexMin) - 1
+else:
+    position = indexMax + (num - 1 - indexMin)
+
+print(position) """
+
+
+# A. Hit the Lottery
+
+
+# A. Anton and Letters
+
+""" 
+line = input()[1:-1].split(",")
+arr = []
+validation = False
+
+for n in line:
+    if type(n) == str and n == "":
+        validation = True
+    arr.append(n.strip())
+
+
+setVar = list(set(arr))
+
+print(0 if validation else len(setVar))
+ """
+
+# Objs
+""" number = int(input(""))
+
+obj = {1: "T", 10: "G", 100: "C", 1000: "F", 10000: "D", 100000: "R", 1000000: "H"}
+
+items_invertidos = list(obj.items())[::-1]
+
+result = ""
+
+for key, value in items_invertidos:
+    cantidad = number // key
+    result += value * cantidad
+    number -= key * cantidad
+
+print(result) """
+
+# tuples
+""" number = int(input(""))
+
+obj = [
+    (1, "T"),
+    (10, "G"),
+    (100, "C"),
+    (1000, "F"),
+    (10000, "D"),
+    (100000, "R"),
+    (1000000, "H"),
+]
+
+items_invertidos = obj[::-1]
+
+result = ""
+
+for key, value in items_invertidos:
+    cantidad = number // key
+    result += value * cantidad
+    number -= key * cantidad
+
+print(result) """
+
+# LISTS
+
+""" number = int(input(""))
+
+keys = [1, 10, 100, 1000, 10000, 100000, 1000000]
+values = ["T", "G", "C", "F", "D", "R", "H"]
+
+keys_invertidos = keys[::-1]
+values_invertidos = values[::-1]
+
+result = ""
+
+for i in range(len(keys_invertidos)):
+    key = keys_invertidos[i]
+    value = values_invertidos[i]
+    cantidad = number // key
+    result += value * cantidad
+    number -= key * cantidad
+
+print(result) """
+
+""" s = "hello, world!"
+print(s[-1]) """
+
+""" fig = {
+    "Tetrahedron": 4,
+    "Cube": 6,
+    "Octahedron": 8,
+    "Dodecahedron": 12,
+    "Icosahedron": 20,
+}
+
+num = int(input())
+
+result = 0
+
+for n in range(num):
+    st = input()
+    result += fig[st]
+
+
+print(result) """
+
+
+""" def generar_matriz(palabra):
+    # Validación de la entrada
+    if not palabra or not palabra.isalpha() or len(palabra) < 3:
+        raise ValueError(
+            "La palabra debe tener al menos 3 letras y no contener espacios."
+        )
+
+    # Longitud de la palabra
+    n = len(palabra)
+
+    # Crear matriz vacía de tamaño n x n
+    matriz = [["" for _ in range(n)] for _ in range(n)]
+
+    # Colocar la palabra en la diagonal principal
+    for i in range(n):
+        matriz[i][i] = palabra[i]
+
+    # Caracteres para la zona 1 (A-M) y zona 2 (N-Z)
+    zona1_chars = iter("abcdefghijklm")
+    zona2_chars = iter("nopqrstuvwxyz")
+
+    # Rellenar la matriz según las zonas
+    for i in range(n):
+        for j in range(n):
+            if i < j:
+                # Zona 1
+                matriz[i][j] = next(zona1_chars)
+                # Reiniciar el iterador si se agotan los caracteres
+                if matriz[i][j] == "m":
+                    zona1_chars = iter("abcdefghijklm")
+            elif i > j:
+                # Zona 2
+                matriz[i][j] = next(zona2_chars)
+                # Reiniciar el iterador si se agotan los caracteres
+                if matriz[i][j] == "z":
+                    zona2_chars = iter("nopqrstuvwxyz")
+
+    # Selección de los generales (3 primeros caracteres de cada zona)
+    generales_zona1 = [matriz[i][j] for i in range(n) for j in range(n) if i < j][:3]
+    generales_zona2 = [matriz[i][j] for i in range(n) for j in range(n) if i > j][:3]
+
+    return matriz, generales_zona1, generales_zona2
+
+
+# Ejemplo de uso
+palabra = "hola"
+matriz, generales_zona1, generales_zona2 = generar_matriz(palabra)
+
+print("Matriz:")
+for fila in matriz:
+    print(" ".join(fila))
+
+print("Generales zona 1:", generales_zona1)
+print("Generales zona 2:", generales_zona2)
+ """
